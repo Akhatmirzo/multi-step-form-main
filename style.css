@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    color: hsl(213, 96%, 18%);
+    /* transition: all 0.5s ease-in; */
+}
+
+body {
+    background-color: hsl(217, 100%, 97%);
+}
+
+.container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    width: 65%;
+    height: 80%;
+    display: flex;
+    background-color: hsl(231, 100%, 99%);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+/*! Steps aside */
+aside {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: url('./assets/images/bg-sidebar-desktop.svg') no-repeat 100% 100%;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+aside .step {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.stepNumber {
+    width: 30px;
+    height: 30px;
+    border: 1px solid hsl(206, 94%, 87%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stepNumber span {
+    font-size: 12px;
+    color: white;
+}
+
+.activeStepNum {
+    background-color: hsl(206, 94%, 87%);
+}
+
+.activeStepNum span {
+    color: black;
+}
+
+.stepText {
+    line-height: 110%;
+}
+
+.stepText h2 {
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: hsl(228, 100%, 84%);
+    opacity: 0.8;
+    letter-spacing: 0.1vw;
+}
+
+.stepText h3 {
+    font-size: 12px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.07vw;
+}
+
+/*! Article Form Step 1 */
+article {
+    width: 100%;
+    padding: 5% 10%;
+}
+
+.formStepText h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.formStepText p {
+    font-size: 14px;
+    color: hsl(231, 11%, 63%);
+    margin-bottom: 20px;
+}
+
+
+.first form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.first label {
+    font-size: 14px;
+    line-height: 250%;
+}
+
+.labelText {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.labelText h2 {
+    font-size: 14px;
+}
+
+.labelText h3 {
+    font-size: 14px;
+    opacity: 0;
+}
+
+.inputStyle {
+    width: 100%;
+    height: 40px;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.inputStyle::placeholder {
+    color: hsl(229, 24%, 87%);
+}
+
+.inputStyle:focus::placeholder {
+    color: hsl(231, 11%, 63%);
+}
+
+.inputStyle:focus {
+    outline: none;
+    border: 1px solid hsl(213, 96%, 18%);
+}
+
+.formError {
+    color: red;
+}
+
+.first .btn button:nth-child(1) {
+    opacity: 0;
+}
+
+/* ! Article select plan Step 2 */
+.planCards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 40px;
+}
+
+.card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 3rem;
+    border: 2px solid hsl(229, 24%, 87%);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.card:hover {
+    border-color: hsl(213, 96%, 18%);
+}
+
+.cardText h3 {
+    font-size: 14px;
+    font-weight: normal;
+    color: hsl(231, 11%, 63%);
+}
+
+.cardText h3 span {
+    font-size: 14px;
+    color: hsl(231, 11%, 63%);
+}
+
+.currentPlan {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 40px;
+    padding: 10px 0;
+    background-color: hsl(217, 100%, 97%);
+}
+
+.currentPlan .monthBtn, .currentPlan .yearBtn {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.currentPlan .yearBtn {
+    color: hsl(231, 11%, 63%);
+}
+
+.animBtn {
+    width: 40px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 50px;
+    display: flex;
+    justify-content: start;
+    background-color: hsl(213, 96%, 18%);
+    padding: 1px 2px;
+    cursor: pointer;
+    transition: all 0.5 ease;
+}
+
+.animBtn .circle {
+    width: 50%;
+    height: 100%;
+    border: 1px solid;
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* ! Article add Ons Step 3 */
+.addOns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 40px;
+}
+
+.onsBox {
+    width: 100%;
+    height: 70px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.onsRight, .onsRight span {
+    color: hsl(243, 100%, 62%);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.onsLeft {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.onsLeft input {
+    transform: scale(1.5);
+}
+
+.onsText p {
+    color: hsl(231, 11%, 63%);
+    font-size: 14px;
+}
+
+/* .onsLeft input[type="checkbox"]:hover .onsBox {
+    border-color: hsl(213, 96%, 18%);
+    background-color: hsl(217, 100%, 97%);
+} */
+
+/* ! Article Summary Step 4 */
+.confirmBox {
+    width: 100%;
+    background-color: hsl(217, 100%, 97%);
+    padding: 25px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.changePlan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.plan h3 {
+    font-size: 14px;
+    color: hsl(231, 11%, 63%);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.plan h3:hover {
+    color: hsl(243, 100%, 62%);
+}
+
+.planSum, .planSum span {
+    font-size: 15px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: hsl(229, 24%, 87%);
+}
+
+.changeOns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.selectOns {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selectOns h2 {
+    color: hsl(231, 11%, 63%);
+    font-weight: 500;
+}
+
+.selectOns h3, .selectOns span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.total h2, .total h2 span{
+    color: hsl(231, 11%, 63%);
+    font-weight: 500;
+}   
+
+.total h3, .total h3 span{
+    color: hsl(243, 100%, 62%);
+}
+
+/* succses */
+.success {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.box h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.box p {
+    font-size: 14px;
+    color: hsl(231, 11%, 63%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.btn button:nth-child(1) {
+    border: none;
+    background-color: transparent;
+    color: hsl(231, 11%, 63%);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn button:nth-child(1):hover {
+    color: hsl(213, 96%, 18%);
+}
+
+.btn button:nth-child(2) {
+    width: 120px;
+    color: white;
+    font-weight: 500;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: hsl(213, 96%, 18%);
+    cursor: pointer;
+}
+
+/* ? maxsus display */
+.firstArticle {
+    display: block;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.secondArticle {
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.thirdArticle {
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.fourArticle {
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.success {
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.year {
+    display: none;
+}
+
+.activeAnimBtn {
+    justify-content: end;
+    transition: all 0.5s ease;
+}
+
+.planactive {
+    border-color: hsl(213, 96%, 18%);
+    background-color: hsl(217, 100%, 97%);
+}

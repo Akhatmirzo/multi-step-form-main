@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Multi-step form</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./responsive.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <main>
+      <section>
+        <!-- ! Sidebar start -->
+        <aside>
+          <!-- ? Step 1 -->
+          <div class="step">
+            <div class="stepNumber" id="stepNum1">
+              <span>1</span>
+            </div>
+            <div class="stepText">
+              <h2>Step 1</h2>
+              <h3>Your info</h3>
+            </div>
+          </div>
+
+          <!-- ? Step 2 -->
+          <div class="step">
+            <div class="stepNumber" id="stepNum2">
+              <span>2</span>
+            </div>
+            <div class="stepText">
+              <h2>Step 2</h2>
+              <h3>Select plan</h3>
+            </div>
+          </div>
+
+          <!-- ? Step 3 -->
+          <div class="step">
+            <div class="stepNumber" id="stepNum3">
+              <span>3</span>
+            </div>
+            <div class="stepText">
+              <h2>Step 3</h2>
+              <h3>Add-ons</h3>
+            </div>
+          </div>
+
+          <!-- ? Step 4 -->
+          <div class="step">
+            <div class="stepNumber" id="stepNum4">
+              <span>4</span>
+            </div>
+            <div class="stepText">
+              <h2>Step 4</h2>
+              <h3>Summary</h3>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ! Form start -->
+        <article class="firstArticle">
+          <!--? Step 1 start -->
+          <div class="formStep first">
+            <div class="formStepText">
+              <h2>Personal info</h2>
+              <p>Please provide your name, email address, and phone number.</p>
+            </div>
+
+            <form>
+              <label for="name">
+                <div class="labelText">
+                  <h2>Name</h2>
+                  <h3 class="formError">This field is required</h3>
+                </div>
+                <input type="text" id="name" class="inputStyle" placeholder="e.g.Stephen King">
+              </label>
+              <label for="email">
+                <div class="labelText">
+                  <h2>Email Address</h2>
+                  <h3 class="formError">This field is required</h3>
+                </div>
+                
+                <input type="email" id="email" class="inputStyle" placeholder="e.g.stephenking@lorem.com">
+              </label>
+              <label for="phone">
+                <div class="labelText">
+                  <h2>Phone Number</h2>
+                  <h3 class="formError">This field is required</h3>
+                </div>
+                <input type="tel" id="phone" class="inputStyle" placeholder="e.g.+1 234 567 890">
+              </label>
+            </form>
+
+            <div class="btn">
+              <button >Go Back</button>
+              <button id="step1" onclick="nextButton1()">Next Step</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ! select plan start -->
+        <article class="secondArticle">
+          <!--? Step 2 start -->
+          <div class="formStep">
+            <div class="formStepText">
+              <h2>Select your plan</h2>
+              <p>You have the option of monthly or yearly billing.</p>
+            </div>
+
+            <div class="planCards month">
+              <div class="card arcade planactive">
+                <img src="./assets/images/icon-arcade.svg" alt="Arcade">
+                <div class="cardText">
+                  <h2>Arcade</h2>
+                  <h3>$<span>9</span>/mo</h3>
+                </div>
+              </div>
+
+              <div class="card advanced">
+                <img src="./assets/images/icon-advanced.svg" alt="Advanced">
+                <div class="cardText">
+                  <h2>Advanced</h2>
+                  <h3>$<span>12</span>/mo</h3>
+                </div>
+              </div>
+
+              <div class="card pro">
+                <img src="./assets/images/icon-pro.svg" alt="Pro">
+                <div class="cardText">
+                  <h2>Pro</h2>
+                  <h3>$<span>15</span>/mo</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="planCards year">
+              <div class="card arcadeyear planactive">
+                <img src="./assets/images/icon-arcade.svg" alt="Arcade">
+                <div class="cardText">
+                  <h2>Arcade</h2>
+                  <h3>$<span>90</span>/year</h3>
+                </div>
+              </div>
+
+              <div class="card advancedyear">
+                <img src="./assets/images/icon-advanced.svg" alt="Advanced">
+                <div class="cardText">
+                  <h2>Advanced</h2>
+                  <h3>$<span>120</span>/year</h3>
+                </div>
+              </div>
+
+              <div class="card proyear">
+                <img src="./assets/images/icon-pro.svg" alt="Pro">
+                <div class="cardText">
+                  <h2>Pro</h2>
+                  <h3>$<span>150</span>/year</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="currentPlan">
+              <h2 class="monthBtn">Monthly</h2>
+              <div class="animBtn">
+                <div class="circle"></div>
+              </div>
+              <h2 class="yearBtn">Yearly</h2>
+            </div>
+
+            <div class="btn">
+              <button id="backStep2">Go Back</button>
+              <button id="step2" onclick="nextButton2()">Next Step</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ! Add ons start -->
+        <article class="thirdArticle">
+          <!--? Step 1 start -->
+          <div class="formStep">
+            <div class="formStepText">
+              <h2>Pick add-ons</h2>
+              <p>Add-ons help enhance your gaming experience.</p>
+            </div>
+
+            <div class="addOns month">
+              <div class="onsBox">
+                <div class="onsLeft">
+                  <input type="checkbox" id="onlineService">
+                  <div class="onsText">
+                    <h2>Online service</h2>
+                    <p>Access to multiplayer games</p>
+                  </div>
+                </div>
+                <h2 class="onsRight">+$<span>1</span>/mo</h2>
+              </div>
+
+              <div class="onsBox">
+                <div class="onsLeft">
+                  <input type="checkbox" id="largerStorage">
+                  <div class="onsText">
+                    <h2>Larger storage</h2>
+                    <p>Extra 1TB of cloud save</p>
+                  </div>
+                </div>
+                <h2 class="onsRight">+$<span>2</span>/mo</h2>
+              </div>
+
+              <div class="onsBox">
+                <div class="onsLeft">
+                  <input type="checkbox" id="custom">
+                  <div class="onsText">
+                    <h2>Customizable Profile</h2>
+                    <p>Custom theme on your profile</p>
+                  </div>
+                </div>
+                <h2 class="onsRight">+$<span>2</span>/mo</h2>
+              </div>
+            </div>
+
+            <div class="addOns year">
+              <div class="onsBox">
+                <div class="onsLeft">
+                  <input type="checkbox" id="onlineServiceY">
+                  <div class="onsText">
+                    <h2>Online service</h2>
+                    <p>Access to multiplayer games</p>
+                  </div>
+                </div>
+                <h2 class="onsRight">+$<span>10</span>/year</h2>
+              </div>
+
+              <div class="onsBox">
+                <div class="onsLeft">
+                  <input type="checkbox" id="largerStorageY">
+                  <div class="onsText">
+                    <h2>Larger storage</h2>
+                    <p>Extra 1TB of cloud save</p>
+                  </div>
+                </div>
+                <h2 class="onsRight">+$<span>20</span>/year</h2>
+              </div>
+
+              <div class="onsBox">
+                <div class="onsLeft">
+                  <input type="checkbox" id="customY">
+                  <div class="onsText">
+                    <h2>Customizable Profile</h2>
+                    <p>Custom theme on your profile</p>
+                  </div>
+                </div>
+                <h2 class="onsRight">+$<span>20</span>/year</h2>
+              </div>
+            </div>
+
+            <div class="btn">
+              <button id="backStep3">Go Back</button>
+              <button id="step3" onclick="nextButton3()">Next Step</button>
+            </div>
+          </div>
+        </article>
+
+        <!--! Summary start -->
+        <article class="fourArticle">
+          <!--? Step 1 start -->
+          <div class="formStep">
+            <div class="formStepText">
+              <h2>Finishing up</h2>
+              <p>Double-check everything looks OK before confirming.</p>
+            </div>
+
+            <div class="confirmBox">
+              <div class="changePlan">
+                <div class="plan">
+                  <h2><span id="selectPlan">Arcade</span> (<span class="dataTypePlan">Monthly</span>)</h2>
+                  <h3>Change</h3>
+                </div>
+                <h2 class="planSum">$<span>9</span><span class="dataTypeSevice">/mo</span></h2>
+              </div>
+
+              <div class="line"></div>
+
+              <div class="changeOns">
+                <div class="selectOns">
+                  <h2>Online service</h2>
+                  <h3>+$<span id="selectSum1">1</span><span class="dataTypeSevice">/mo</span></h3>
+                </div>
+
+                <div class="selectOns">
+                  <h2>Larger Storage</h2>
+                  <h3>+$<span id="selectSum2">2</span><span class="dataTypeSevice">/mo</span></h3>
+                </div>
+
+                <div class="selectOns">
+                  <h2>Customizable profile</h2>
+                  <h3>+$<span id="selectSum3">2</span><span class="dataTypeSevice">/mo</span></h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="total">
+              <h2>Total per <span class="dataTypePlan">month</span></h2>
+              <h3>+$<span id="totalSum">12</span><span class="dataTypeSevice">/mo</span></h3>
+            </div>
+
+            <div class="btn">
+              <button id="backStep4">Go Back</button>
+              <button id="step4" onclick="subButton()">Confirm</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="success">
+          <div class="box">
+            <img src="./assets/images/icon-thank-you.svg" alt="Thank you">
+            <h2>Thank you!</h2>
+            <p>Thanks for confirming your subscription! We hope you have fun 
+              using our platform. If you ever need support, please feel free 
+              to email us at support@loremgaming.com.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+  <!-- Step 4 start -->
+
+  <!-- Finishing up
+  Double-check everything looks OK before confirming. -->
+
+  <!-- Dynamically add subscription and add-on selections here -->
+
+  <!-- Total (per month/year)
+
+  Go Back
+  Confirm -->
+
+  <!-- Step 4 end -->
+
+  <!-- Step 5 start -->
+
+  <!-- Thank you!
+
+  Thanks for confirming your subscription! We hope you have fun 
+  using our platform. If you ever need support, please feel free 
+  to email us at support@loremgaming.com. -->
+
+  <!-- Step 5 end -->
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="./script.js"></script>
+</body>
+
+</html>
